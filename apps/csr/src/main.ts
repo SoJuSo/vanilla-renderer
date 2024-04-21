@@ -1,4 +1,5 @@
 import { Header } from "@repo/ui/header";
+import { Tree } from "@repo/ui/tree";
 import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import { Counter } from "@repo/ui/counter";
@@ -34,7 +35,10 @@ if ($target) {
   $Counter.appendChild(createElementFromHTML(Counter()));
   $target.appendChild($Counter);
 
-  setupCounter($.querySelector<HTMLButtonElement>("#counter")!);
+  const $FirstTree = createElementFromHTML(Tree({ treeId: "1", treeName: "sub1" }));
+  $target.appendChild($FirstTree);
+
+  setupCounter($.querySelector<HTMLButtonElement>("#counter")!); // 이 ! << 얘가 if 역할인가?
 } else {
   alert(`에러 발생!`);
 }
