@@ -4,6 +4,7 @@ import "./style.css";
 import typescriptLogo from "/typescript.svg";
 import { Counter } from "@repo/ui/counter";
 import { setupCounter } from "@repo/ui/setup-counter";
+import { treeNavigator } from "@repo/ui/tree-navigator";
 const $ = document;
 const $target = $.querySelector<HTMLDivElement>("#app");
 
@@ -39,6 +40,7 @@ if ($target) {
   $target.appendChild($FirstTree);
 
   setupCounter($.querySelector<HTMLButtonElement>("#counter")!); // 이 ! << 얘가 if 역할인가?
+  treeNavigator({ element: $.querySelector<HTMLButtonElement>(`#tree${1}`)!, treeId: "1" });
 } else {
   alert(`에러 발생!`);
 }
