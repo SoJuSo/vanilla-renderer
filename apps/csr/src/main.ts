@@ -22,15 +22,17 @@ if ($target) {
         <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
       </a>
       ${Header({ title: "csr" })}
-      <div class="card">
-        ${Counter()}
-      </div>
     </div>
     `;
 
   // const $Header = $.createElement("div");
   const $Header = createElementFromHTML(Header({ title: "csr" }));
   $target.appendChild($Header);
+
+  const $Counter = $.createElement("div");
+  $Counter.className = "card";
+  $Counter.appendChild(createElementFromHTML(Counter()));
+  $target.appendChild($Counter);
 
   setupCounter($.querySelector<HTMLButtonElement>("#counter")!);
 } else {
