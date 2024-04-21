@@ -4,5 +4,5 @@ interface Tree {
 }
 
 export function Tree({ treeName, treeId }: Tree) {
-  return `<button className="tree" id="${treeId}" type="button">${treeName}</button>`;
+  return `<button className="tree" id="tree${treeId}" type="button">${treeName}</button>`;
 }
