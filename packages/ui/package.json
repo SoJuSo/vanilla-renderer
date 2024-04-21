@@ -5,7 +5,8 @@
     "./counter": "./components/counter.ts",
     "./header": "./components/header.ts",
     "./tree": "./components/tree.ts",
-    "./setup-counter": "./utils/counter.ts"
+    "./setup-counter": "./utils/counter.ts",
+    "./tree-navigator": "./utils/tree.ts"
   },
   "license": "MIT",
   "scripts": {
