@@ -1,7 +1,6 @@
 import { Header } from "@repo/ui/header";
 import { Tree } from "@repo/ui/tree";
 import "./style.css";
-import typescriptLogo from "/typescript.svg";
 import { Counter } from "@repo/ui/counter";
 import { setupCounter } from "@repo/ui/setup-counter";
 import { treeNavigator } from "@repo/ui/tree-navigator";
@@ -15,19 +14,6 @@ const createElementFromHTML = (htmlString: string): ChildNode => {
 };
 
 if ($target) {
-  $target.innerHTML = `
-    <div>
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo" alt="Vite logo" />
-      </a>
-      <a href="https://www.typescriptlang.org/" target="_blank">
-        <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-      </a>
-      ${Header({ title: "csr" })}
-    </div>
-    `;
-
-  // const $Header = $.createElement("div");
   const $Header = createElementFromHTML(Header({ title: "csr" }));
   $target.appendChild($Header);
 

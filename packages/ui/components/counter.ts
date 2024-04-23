@@ -1,3 +1,5 @@
+import style from "../styles/counter.module.css";
+
 export function Counter() {
-  return `<button id="counter" type="button"></button>`;
+  return `<button className=${style.counter} id="counter" type="button"></button>`;
 }
