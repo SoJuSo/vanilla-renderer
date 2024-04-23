@@ -1,3 +1,5 @@
+import "../styles/tree.style.css";
+
 interface Tree {
   treeName: string;
   treeId: string;
