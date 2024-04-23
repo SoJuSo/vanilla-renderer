@@ -1,33 +1,25 @@
-# `Turborepo` Vite starter
+# vanilla JS를 활용해서 웹 렌더링 방식 5가지 구현
 
-This is an official starter Turborepo.
+웹 렌더링 원리를 파악하기 위해 프레임워크를 사용하지 않고 여러 렌더링을 구현하는 monorepo 형태의 리포지토리입니다.<br />
+본 리포지토리는 개인의 학습을 목적을 하고 있으며 잘못된 내용이 있을 수 있습니다.
 
-## Using this example
+## 목적
 
-Run the following command:
+렌더링의 동작 원리를 이해하고 추후 프레임워크 단위 학습에 적용하기 위함입니다.
 
-```sh
-npx create-turbo@latest -e with-vite
-```
+## 목표
 
-## What's inside?
+5가지 렌더링을 구현합니다. 아래 목표는 바뀔 수 있습니다.(24.04.23)
 
-This Turborepo includes the following packages and apps:
+- [ ] CSR : vanilla js와 VITE 서버를 이용하여 CSR을 구현합니다.
+- [ ] SSR : express와 vanilla js를 활용하여 SSR을 구현합니다.
+- [ ] SSG : express와 vanilla js를 활용하여 SSG를 구현합니다.
+- [ ] SPA : express와 vanilla js를 활용하여 SPA를 구현합니다.
+- [ ] MPA : TBD
 
-### Apps and Packages
+## 번외 적용
 
-- `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+본 프로젝트를 구현하며 목적과 더불어 적용한 기술을 서술합니다.
 
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [x] TurboRepo : 모노레포를 구성하는 것을 도와주는 도구입니다. 재사용 단위의 필요성이 많아 개별 리포지토리 대신 모노레포를 적용합니다.
+- [ ] Jest or Vitest : 단위 테스트에 대한 연습을 진행하기 위해 적용하는 도구입니다.
