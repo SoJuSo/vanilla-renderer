@@ -1,4 +1,4 @@
-button {
+.counter {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   border-radius: 8px;
@@ -11,16 +11,16 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
+.counter:hover {
+  border-color: red;
 }
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
+/* .counter:focus,
+  .counter:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  } */
 
 @media (prefers-color-scheme: light) {
-  button {
+  .counter {
     background-color: #f9f9f9;
   }
 }
