@@ -10,6 +10,7 @@ const $target = $.querySelector<HTMLDivElement>("#app");
 const createElementFromHTML = (htmlString: string): ChildNode => {
   const div = document.createElement("div");
   div.innerHTML = htmlString.trim();
+  console.log(div.firstChild);
   return div.firstChild as ChildNode;
 };
 
@@ -19,7 +20,9 @@ if ($target) {
 
   const $Counter = $.createElement("div");
   $Counter.className = "card";
-  $Counter.appendChild(createElementFromHTML(Counter()));
+  const counterElement = Counter();
+  console.log(counterElement);
+  $Counter.appendChild(createElementFromHTML(counterElement));
   $target.appendChild($Counter);
 
   const $FirstTree = createElementFromHTML(Tree({ treeId: "1", treeName: "sub1" }));
