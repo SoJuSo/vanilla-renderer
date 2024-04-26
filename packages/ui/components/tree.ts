@@ -6,5 +6,5 @@ interface Tree {
 }
 
 export function Tree({ treeName, treeId }: Tree) {
-  return `<button className=${styles.treeButton} id="tree${treeId}" type="button">${treeName}</button>`;
+  return `<button class=${styles.treeButton} id="tree${treeId}" type="button">${treeName}</button>`;
 }
