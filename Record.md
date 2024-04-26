@@ -9,3 +9,21 @@ tree.ts에서만 스타일을 가져왔는데 자연스레 counter.ts파일에�
 이를 해결할 방법은 CSS 모듈이다.
 
 근데,,,,,, CSS 모듈을 적용하는 방법이 뭔가 복잡하다. 터보레포 환경을 아직 완벽하게 이해 못하기 때문에 그런 것 같은데 이부분은 내일 적용해봐야겠다.
+
+---
+
+240425
+
+아래 코드와 그냥 통쨰로 html 코드를 return했을때 적용의 차이가 존재한다.<br />
+아래 코드를 적용하면 CSS모듈이 적용이 안된다..?인줄 알았지만
+
+```ts
+const createElementFromHTML = (htmlString: string): ChildNode => {
+  const div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+  console.log(div.firstChild);
+  return div.firstChild as ChildNode;
+};
+```
+
+className은 React에서 쓰이고 vanilla js에선 `class`이다..
