@@ -9,9 +9,10 @@
 
 ## 목표
 
-5가지 렌더링을 구현합니다. 아래 목표는 바뀔 수 있습니다.(Last Update 24.04.23)
+5가지 렌더링을 구현합니다. 아래 목표는 바뀔 수 있습니다.(Last Update 24.06.05)
 
-- [ ] CSR : vanilla js와 VITE 서버를 이용하여 CSR을 구현합니다.
+- [ ] CSR : vanilla js와 VITE 서버를 이용하여 CSR을 구현합니다.(현재 구현 중)
+  - 고려 사항 : 재사용성, 라우팅 처리 효율 향상
 - [ ] SSR : express와 vanilla js를 활용하여 SSR을 구현합니다.
 - [ ] SSG : express와 vanilla js를 활용하여 SSG를 구현합니다.
 - [ ] SPA : express와 vanilla js를 활용하여 SPA를 구현합니다.
