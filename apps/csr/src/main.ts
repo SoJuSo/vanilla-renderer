@@ -4,38 +4,53 @@ import "./style.css";
 import { Counter } from "@repo/ui/counter";
 import { setupCounter } from "@repo/ui/setup-counter";
 import { treeNavigator } from "@repo/ui/tree-navigator";
+import { createElementFromHTML } from "./util";
+
+const route = async () => {
+  const { pathname } = location;
+  if (pathname === "/") {
+    // 루트인 경우
+    if ($target) {
+      const $Header = createElementFromHTML(Header({ title: "csr Home" }));
+      $target.appendChild($Header);
+
+      const $Counter = $.createElement("div");
+      $Counter.className = "card";
+      const counterElement = Counter();
+      $Counter.appendChild(createElementFromHTML(counterElement));
+      $target.appendChild($Counter);
+
+      setupCounter($.querySelector<HTMLButtonElement>("#counter")!);
+    }
+  } else {
+    console.log(pathname);
+  }
+};
+
 const $ = document;
 const $target = $.querySelector<HTMLDivElement>("#app");
 
-const createElementFromHTML = (htmlString: string): ChildNode => {
-  const div = document.createElement("div");
-  div.innerHTML = htmlString.trim();
-  return div.firstChild as ChildNode;
-};
-
 if ($target) {
-  const $Header = createElementFromHTML(Header({ title: "csr" }));
-  $target.appendChild($Header);
+  const trees = [
+    { treeId: "1", treeName: "sub1", color: "red" },
+    { treeId: "2", treeName: "sub2" },
+    { treeId: "3", treeName: "sub3", color: "green" },
+  ];
 
-  const $Counter = $.createElement("div");
-  $Counter.className = "card";
-  const counterElement = Counter();
-  $Counter.appendChild(createElementFromHTML(counterElement));
-  $target.appendChild($Counter);
+  trees.forEach(({ treeId, treeName, color }) => {
+    const treeElement = createElementFromHTML(Tree({ treeId, treeName, color }));
+    $target.appendChild(treeElement);
 
-  const $FirstTree = createElementFromHTML(Tree({ treeId: "1", treeName: "sub1" }));
-  $target.appendChild($FirstTree);
-
-  const $SecondTree = createElementFromHTML(Tree({ treeId: "2", treeName: "sub2" }));
-  $target.appendChild($SecondTree);
-
-  const $ThirdTree = createElementFromHTML(Tree({ treeId: "3", treeName: "sub3" }));
-  $target.appendChild($ThirdTree);
-
-  setupCounter($.querySelector<HTMLButtonElement>("#counter")!); // 이 ! << 얘가 if 역할인가?
-  treeNavigator({ element: $.querySelector<HTMLButtonElement>(`#tree${1}`)!, treeId: "1" });
-  treeNavigator({ element: $.querySelector<HTMLButtonElement>(`#tree${2}`)!, treeId: "2" });
-  treeNavigator({ element: $.querySelector<HTMLButtonElement>(`#tree${3}`)!, treeId: "3" });
+    const buttonElement = $.querySelector<HTMLButtonElement>(`#tree${treeId}`);
+    if (buttonElement) {
+      treeNavigator({ element: buttonElement, treeId });
+      buttonElement.addEventListener("click", () => route());
+    }
+  });
 } else {
   alert(`에러 발생!`);
 }
+
+window.addEventListener("popstate", () => route());
+
+route();
