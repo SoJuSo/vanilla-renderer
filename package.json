@@ -1,4 +1,5 @@
 {
+  "name": "soju",
   "private": true,
   "scripts": {
     "build": "turbo build",
