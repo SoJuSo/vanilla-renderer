@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --clearScreen false",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint \"src/**/*.ts\"",
-    "start": "node ./src/server.js"
+    "dev": "node server",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server"
   },
   "dependencies": {
     "@repo/ui": "*",
+    "compression": "^1.7.4",
     "express": "^4.19.2",
-    "vite-express": "^0.17.0"
+    "sirv": "^2.0.4"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
