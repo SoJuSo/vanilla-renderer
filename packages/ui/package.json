@@ -10,7 +10,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "lint": "eslint \"**/*.ts\""
+    "lint": "eslint \"**/*.ts\"",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

@@ -4,13 +4,16 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
     "@repo/eslint-config": "*",
+    "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "turbo": "latest"
+    "turbo": "latest",
+    "vitest": "^1.6.0"
   },
   "packageManager": "npm@10.2.3",
   "workspaces": [
