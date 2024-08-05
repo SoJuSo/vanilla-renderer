@@ -1,4 +1,20 @@
 {
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowJs": true
+  },
+  "ts-node": {
+    "esm": true
+  },
   "extends": "@repo/typescript-config/vite.json",
-  "include": ["src"]
+  "include": ["src", "src/types.d.ts"]
 }
